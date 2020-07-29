@@ -169,5 +169,7 @@ case $1 in
   #func_build_c2
   ufw enable
   service apache2 stop
+  echo '[*] CS Domain Store location: $domainStore'
+  echo '[*] CS Domain store password: $password'
   ;;
 esac
