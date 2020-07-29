@@ -166,6 +166,6 @@ case $1 in
   func_apache_check
   func_install_letsencrypt
   func_build_pkcs
-  func_build_c2
+  #func_build_c2
   ;;
 esac
