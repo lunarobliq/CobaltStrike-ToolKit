@@ -170,8 +170,8 @@ case $1 in
   ufw enable
   service apache2 stop
   echo 'https-certificate {'
-  echo   set keystore \"$domainStore\"\
-  echo   set password \"$password\"\
+  echo   'set keystore $domainStore'
+  echo   'set password "$password'
   echo '}'
   ;;
 esac
