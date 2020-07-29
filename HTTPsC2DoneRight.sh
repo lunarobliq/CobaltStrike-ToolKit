@@ -16,7 +16,7 @@ echo '==========================================================================
 echo ' [Web]: Http://CyberSyndicates.com | [Twitter]: @KillSwitch-GUI'
 echo '=========================================================================='
 
-
+ufw disable
 echo -n "Enter your DNS (A) record for domain [ENTER]: "
 read domain
 echo
@@ -167,5 +167,6 @@ case $1 in
   func_install_letsencrypt
   func_build_pkcs
   #func_build_c2
+  ufw enable
   ;;
 esac
