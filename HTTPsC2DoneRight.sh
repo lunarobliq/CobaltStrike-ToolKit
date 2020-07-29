@@ -168,5 +168,6 @@ case $1 in
   func_build_pkcs
   #func_build_c2
   ufw enable
+  service apache2 stop
   ;;
 esac
