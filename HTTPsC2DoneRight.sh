@@ -20,13 +20,9 @@ echo '==========================================================================
 echo -n "Enter your DNS (A) record for domain [ENTER]: "
 read domain
 echo
-
-echo -n "Enter your common password to be used [ENTER]: "
-read password
+password=lunarobliq
 echo
-
-echo -n "Enter your CobaltStrike server location [ENTER]: "
-read cobaltStrike
+cobaltStrike=/root/Tools/cobaltstrike
 echo
 
 domainPkcs="$domain.p12"
