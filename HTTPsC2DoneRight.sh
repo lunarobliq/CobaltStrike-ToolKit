@@ -15,8 +15,6 @@ echo ' HTTPS C2 Done Right Setup Script | [Updated]: 2016'
 echo '=========================================================================='
 echo ' [Web]: Http://CyberSyndicates.com | [Twitter]: @KillSwitch-GUI'
 echo '=========================================================================='
-
-ufw disable
 echo -n "Enter your DNS (A) record for domain [ENTER]: "
 read domain
 echo
@@ -109,12 +107,6 @@ func_apache_check(){
     echo
     exit 1
   fi
-  if [ $(which ufw) ]; then
-    echo 'Looks like UFW is installed, opening ports 80 and 443'
-    ufw allow 80/tcp
-    ufw allow 443/tcp
-    echo
-  fi
 }
 
 func_install_letsencrypt(){
@@ -161,17 +153,18 @@ func_build_c2(){
 # Menu Case Statement
 case $1 in
   *)
+  ufw disable
   func_check_env
   func_check_tools
   func_apache_check
   func_install_letsencrypt
   func_build_pkcs
   #func_build_c2
-  ufw enable
   service apache2 stop
   echo 'https-certificate {'
   echo   'set keystore $domainStore'
   echo   'set password "$password'
   echo '}'
+  ufw enable
   ;;
 esac
